@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int N;
+  string S;
+  cin >> N >> S;
+  int len;
+  len = S.size();
+  for (int i=0;i<N-len;i++){
+    S = "o" + S;
+  }
+  cout << S << endl;
+}
