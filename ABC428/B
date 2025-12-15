@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int N;
+  int K;
+  int S;
+  cin >> N >> K >> S;
+  //dataに文字列を格納する
+  vector<string> data(N-K+1);
+  for(int i=0;i<=N-K;i++){
+    data.at(i) = substr(i, K); 
+  }
+  
+  //mojiretuで同じ文字列の区別をなくす
+  set<string> mojiretu;
+  for(int i=0;i<=N-K;i++){
+    mojiretu.push_vack(data.at(i));
+  }
+  
+  //mojiretu_countで文字列の出現回数を格納する箱を作る
+  vector<int> mojiretu_count(set.size());
+  for(int j=0;j<mojiretu.size();j++){
+    for(int i=0;i<N-K;i++){
+      mojiretu.at(j)==data.at(j);
+      mojiretu_count.at(j) += 1;
+    }
+  }
+  
+  //出現回数の最大値を求める
+  int x = *max_element(mojiretu_count.begin(), mojiretu_count.end());
+  
+  //x回出現する文字列を格納するvectorを作る
+  vector<int> dict;
+  for (int j=0;j<mojiretu.size());j++){
+    if (mojiretu_count.at(j) == x){
+      dict.push_back(mojiretu.at(j));
+    }
+  }
+  
+  for(int i=0;i<dict.size();i++){
+    cout << dict.sort.at(i)<< " " << endl;
+  }
+}
