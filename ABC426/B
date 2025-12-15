@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  string S;
+  cin >> S;
+  
+  set<char> list;
+  for (int i=0;i<S.size();i++){
+    list.insert(S.at(i));
+  }
+  
+  int count=0;
+  for(int i=0;i<S.size();i++){
+   if (list.first == S.at(i)){
+     count += 1;
+   }
+  }
+  if (count == 1){
+    cout << list.first << endl;
+  }
+  else{
+    cout << list.second << endl;
+  }
+}
