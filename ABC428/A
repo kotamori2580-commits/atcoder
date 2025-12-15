@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int S;
+  int A;
+  int B;
+  int X;
+  cin >> S >> A >> B >> X;
+  int n;
+  n = X/(A+B);
+  int L;
+  if (X<n*(A+B)+A){
+    L = n*S*A+S*(X-n*(A+B));
+  }
+  else{
+    L = (n+1)*S*A;
+  }
+  cout << L << endl;
+}
