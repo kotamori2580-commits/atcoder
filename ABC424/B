@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int n, m, k;
+  cin >> n >> m >> k;
+  vector(vector<int>)　vec;
+  for(int i=0;i<k;i++){
+    int a;
+    int b;
+    cin >> a >> b;
+    vec.at(i) = (a,b);
+  }
+  
+  vector<int> num(n);
+  for(int i=0;i<k;j++){
+    for(int j=0;j<n;i++){
+      if(vec.at(i).at(0) == j){
+        num.at(j) += 1;
+      }
+    }
+  }
+  if(num.at(j) == m){
+    cout << j+1 << "\n";
+  }
+}
