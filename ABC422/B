@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int h;
+  int w;
+  cin >> h >> w;
+  vector<vector<char>> vec(h, vector<char>(w));
+  
+  for(int i=1;i<=h;i++){
+    vector<char> s;
+    for(int j=1;j<=w;j++){
+      char a;
+      cin>>a;
+      s.push_back(a); 
+    }
+    vec.at(i-1) = s;
+  }
+  
+  bool flag= true;
+  int count =0;
+  for(int i=1;i<=h;i++){
+    for(int j=1;j<=w;j++){
+      if (vec.at(i-1).at(j-1) == '#){
+        if(vec.at(i-1).at(j-2) == '#'){
+          count ++;
+        }
+        if(vec.at(i-2).at(j-1) == '#'){
+          count ++:
+        }
+        if(vec.at(i-1).at(j) == '#'){
+          count ++;
+        }
+        if(vec.at(i).at(j-1) == '#'){
+          count ++;
+        }
+      }
+      if(count%2 == 1){
+        flag = false;
+      }
+    }
+  }
+  if(flag){
+    cout << "Yes" << "\n";
+  }
+  else{
+    cout << "No" << "\n";
+  }
+}
