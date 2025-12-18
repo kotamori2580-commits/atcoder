@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  string s;
+  cin >> s;
+  int s_i;
+  int s_j;
+  s_i = int(s[0]);
+  s_j = int(s[2]);
+  if(s_j<8){
+    s_j +=1;
+  }
+  else{
+    s_i +=1;
+    s_j =1;
+  }
+  cout << string[s_i] + "-" + string[s_j] << "\n";
+}
+
