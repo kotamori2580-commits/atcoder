@@ -1,0 +1,67 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int n m;
+  cin >> n >> m;
+  
+  vector<vector<int>> block(n, vector<int>);
+  for(int i=0;i<n;i++){
+    vector<int> s;
+    for(int j =0;j<m;j++){
+      int a;
+      cin >> a;
+      s.push_back(a);
+    }
+    block.push_back(s);
+  }
+
+  for(int j =0;j<m;j++){
+    int num_0 = 0;
+    int num_1 = 0;
+    for(int i=0;i<n;i++){
+      if(block.at(i).at(j)==0){
+        num_0 ++;
+      }
+      else{
+        num_1 ++;
+      }
+    }  
+    
+    //点数行列に書き換える  
+    if(num_0<num_1){
+      for(int i=0;i<n;i++){
+        if(block.at(i).at(j)==0){
+          block.at(i).at(j)=1;
+        }
+        else{
+          block.at(i).at(j)=0;
+        }
+      }
+    }
+  }
+
+  vector<int> point(n);   
+  for(int i=0;i<n;i++){
+    for(int j=0;j<m;j++){
+      int total=0;
+      if(block.at(i).at(j)==1){
+        total ++;
+      }
+      point.at(i) = total;
+    }
+  }
+  
+  int a=0;
+  for(int i=0;i<n;i++){
+    if(point.at(i)>a){
+      a = point.at(i);
+    }
+  }
+  
+  for(int i=0;i<n;i++){
+    if(point.at(i) == a){
+      cout << i+1 <<  " " << "/n";
+    }
+  }
+}
