@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+usin namespace std;
+
+int main(){
+  int x,y;
+  cin >> x >> y;
+  int total;
+  total = x+y;
+  if (total>12){
+    total = total-12;
+  }
+  cout << total << "\n";
+}
