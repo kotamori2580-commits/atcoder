@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int D, F;
+  cin >> D >> F;
+  int i;
+  while(F+7*i<=D){
+    i++;
+  }
+  cout << (F+7*i)-D << "\n";
+}
