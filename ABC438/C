@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int A[1000000];
+
+int main(){
+  int N;
+  cin >> N;
+  for(int i=1;i<=N;i++){
+    cin >> A[i];
+  }
+  
+  for(int k=1;k<=N-3;k++){
+    if (A[k] !=0 && A[k] == A[k+1] && A[k+1] == A[k+2] && A[k+2] == A[k+3]){
+      for(int i=k;i<=N-3;i++){
+        A[i] = A[i+4];
+      }
+      N -= 4;
+    }
+    if(N<4){
+      break;
+    }
+  }
+  cout << N << "\n";
+}
