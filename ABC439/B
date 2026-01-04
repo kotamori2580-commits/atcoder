@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int N;
+  cin >> N;
+  bool flag = false;
+  
+  for(int j=1;j<=20;j++){
+    string num;
+    num = to_string(N);
+    long long total=0;
+    for(int i=0;i<num.size();i++){
+      int a = num[i]-'0';
+      total += a*a;
+    }
+    if(total == 1){
+      flag = true;
+      break;
+    }
+    N = total;
+  }
+  
+  if(flag){
+    cout << "Yes" << "\n";
+  }
+  else{
+    cout << "No" << "\n";
+  }
+}
