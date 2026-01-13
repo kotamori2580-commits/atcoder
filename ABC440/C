@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  long long T;
+  cin >> T;
+  for(int i=1;i<=T;i++){
+    long long N,W;
+    cin >> N >> W;
+    long long C[N];
+    for(int i=1;i<=N;i++){
+      cin >> C[i];
+    }
+    
+    long long ans= 10000000000;
+    for(int x=0;x<(2*W);x++){
+      long long total=0;
+      for(int i=1;i<=N;i++){
+        if(((i+x)%(2*W))<W){
+          total += C[i];
+        }
+      }
+      ans = min(ans, total);
+    }
+    cout << ans << "\n";
+  }
+}
