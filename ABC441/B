@@ -1,0 +1,60 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int N;
+string S;
+bool is_takahashi_go_word(string w){
+  bool is_takahashi_go = true;
+  for(int i=0;i<w.size();i++){
+    bool included = false;
+    for(int j=0;j<N;j++){
+      if(S[j] == w[i]){
+        included = true;
+      }
+    }
+    
+    if(!included){
+      is_takahashi_go = false;
+    }
+  }
+  return is_takahashi_go;
+}
+
+
+int M;
+string T;
+bool is_aoki_go_word(string w){
+  bool is_aoki_go = true;
+  for(int i=0;i<w.size();i++){
+    bool included = false;
+    for(int j=0;j<M;j++){
+      if(T[j] == w[i]){
+        included = true;
+      }
+    }
+    
+    if(!included){
+      is_aoki_go = false;
+    }
+  }
+  return is_aoki_go;
+}
+
+
+int main(){
+  int Q;
+  cin >> N >> M >> S >> T >> Q;
+  for(int i=0;i<Q;i++){
+    string w;
+    cin >> w;
+    if(!is_takahashi_go_word(w)){
+      cout << "Aoki" << "\n";
+    }
+    else if(!is_aoki_go_word(w){
+      cout << "Takahashi" << "\n";
+    }
+    else{
+      cout << "Unknown" << "\n";
+    }
+  }
+}
