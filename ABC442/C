@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int A[200009],B[200009];
+int stake[200009];
+int cand[200009];
+
+long long combination(int n){
+  long long child=1;
+  for(int i=n;i>=(n-3+1);i--){
+    child *= i;
+  }
+  child /=6;
+  return child;
+}
+
+int main(){
+  int N,M;
+  cin >> N >> M;
+  for(int i=1;i<=M;i++){
+    cin >> A[i] >> B[i];
+  }
+  for(int i=1;i<=M;i++){
+    stake[A[i]] ++;
+    stake[B[i]] ++;
+  }
+  for(int i=1;i<=N;i++){
+    cand[i] = (N-1)-stake[i];
+    if(cand[i]<3){
+      cout << 0;
+    }
+    else if(cand[i]==3){
+      cout << 1;
+    }
+    else{
+      cout << combination(cand[i]);
+    }
+    
+    if(i<N){
+      cout << " ";
+    }
+    else{
+      cout << "\n";
+    }
+  }
+}
