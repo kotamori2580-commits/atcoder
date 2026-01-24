@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int A[1000009];
+
+int main(){
+  int Q;
+  cin >> Q;
+  for(int i=1;i<=Q;i++){
+    cin >> A[i];
+  }
+  int sound = 0;
+  bool flag = false;
+  for(int i=1;i<=Q;i++){
+    if(A[i]==1){
+      sound ++;
+    }
+    else if(A[i]==2){
+      if(sound>=1){
+        sound--;
+      }
+    }
+    else{
+      if(flag){
+        flag = false;
+      }
+      else{
+        flag = true;
+      }
+    }
+    if(sound>=3 && flag){
+      cout << "Yes" << "\n";
+    }
+    else{
+      cout << "No" << "\n";
+    }
+  }
+}
