@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+long long A[1000009];
+
+int main(){
+  long long N,T;
+  cin >> N >> T;
+  for(int i=1;i<=N;i++){
+    cin >> A[i];
+  }
+  
+  long long open_time =0;
+  bool flag = true;
+  long long ans=0;
+  long long t = 0;
+  long long i=1;
+  for(int i=1;i<=N;i++){
+    if(flag){
+      flag = false;
+      ans += A[i] - open_time;
+      open_time = A[i] + 100;
+    }
+    else{
+      if(A[i] >= open_time){
+        flag = true;
+        ans += A[i]-open_time;
+        open_time = A[i] + 100;
+      }
+    }
+  }
+  if(open_time <=T){
+    ans += T-open_time;
+  }
+  cout << ans << "\n";
+}
