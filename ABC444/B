@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  long long N,K;
+  cin >> N >> K;
+  long long ans=0;
+  for(int i=1;i<=N;i++){
+    long long total=0;
+    string x;
+    x = to_string(i);
+    for(int j=0;j<x.size();j++){
+      total += x[j]-'0';
+    }
+    if(total==K){
+      ans ++;
+    }
+  }
+  cout << ans << "\n";
+}
