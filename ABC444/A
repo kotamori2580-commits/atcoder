@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  long long N;
+  cin >> N;
+  int a,b,c;
+  a=N/100;
+  b=(N%100)/10;
+  c=(N%10);
+  if(a==b && b==c){
+    cout << "Yes" << "\n";
+  }
+  else{
+    cout << "No" << "\n";
+  }
+}
